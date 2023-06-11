@@ -29,7 +29,7 @@ function Main() {
                     <option value="oceania">Oceania</option>
                 </select>
             </div>
-            <section className="grid grid-cols-1 md:grid-cols-4 gap-10 rounded-md">
+            <section className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-10 rounded-md">
                 {filterName?.sort((a, b) => a.name.common.localeCompare(b.name.common))
                     .map((item, index) =>
                         <div className={`${!theme ? 'bg-white' : 'bg-[hsl(209,23%,22%)] text-white'} w-full mt-5 pb-10 shadow-md rounded-md`} key={index}>

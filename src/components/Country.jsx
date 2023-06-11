@@ -38,7 +38,7 @@ function Country() {
                                 <p className="font-bold mt-8 mb-5 lg:text-3xl">{item.name.common}</p>
                                 <p>Native Name:
                                     <span className="font-normal">{' '}{item.name.nativeName && Object.keys(item.name.nativeName).length > 0 ?
-                                        Object.values(item.name.nativeName)[Object.values(item.name.nativeName).length - 1].common : null}
+                                        Object.values(item.name.nativeName)[Object.values(item.name.nativeName).length - 1].common : 'Name no found'}
                                     </span>
                                 </p>
                                 <p>Population:
@@ -48,23 +48,23 @@ function Country() {
                                     <span className="font-normal">{' '}{item.region}
                                     </span>
                                 </p>
-                                <p>Sub Region: <span className="font-normal">{' '}{item.subregion}</span></p>
-                                <p>Capital: <span className="font-normal">{' '}{item.capital}</span></p>
+                                <p>Sub Region: <span className="font-normal">{' '}{item.subregion ? item.subregion : 'No subregion found'}</span></p>
+                                <p>Capital: <span className="font-normal">{' '}{item.capital ? item.capital : 'No capital found'}</span></p>
                             </article>
                             <article className="font-semibold lg:text-lg lg:leading-8 col-span-2 md:col-span-1">
                                 <p>Top Level Domain:<span className="font-normal">{' '}{item.tld}</span></p>
                                 <p>Currencies:
-                                    <span className="font-normal">{' '}{item.currencies && Object.keys(item.currencies).length > 0 ? Object.values(item.currencies)[Object.values(item.currencies).length - 1].name : null}</span>
+                                    <span className="font-normal">{' '}{item.currencies && Object.keys(item.currencies).length > 0 ? Object.values(item.currencies)[Object.values(item.currencies).length - 1].name : 'No currencies found'}</span>
                                 </p>
                                 <p>Languages:
                                     <span className="font-normal">{' '}{item.languages && Object.keys(item.languages).length > 0 ?
-                                        Object.values(item.languages).join(', ') : null}
+                                        Object.values(item.languages).join(', ') : 'No languages found'}
                                     </span>
                                 </p>
                             </article>
                             <article className="col-span-2 flex lg:flex-row lg:items-center flex-col  lg:text-lg">
                                 <p className="font-semibold mb-10 lg:m-0 w-44">Border Countries:{' '}</p>
-                                <p className="font-normal flex items-center gap-5 text-center">
+                                <div className="font-normal flex items-center gap-5 text-center flex-wrap">
                                     {item.borders && Object.keys(item.borders).length > 0 ? (
                                         item.borders.map((border, index) => (
                                             <button key={index} className={`${theme ? 'text-white bg-[hsl(209,23%,22%)]' : 'bg-white '} shadow-lg w-40 lg:w-20 p-2 md:ml-5`} onClick={()=> navigate(`/${border}`)}>
@@ -74,7 +74,7 @@ function Country() {
                                     ) : (
                                         'No borders found'
                                     )}
-                                </p>
+                                </div>
                             </article>
                         </aside>
                     </section>
