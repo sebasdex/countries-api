@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/sebasdex/countries-api)
-- Live Site URL: [Add live site URL here](https://countries-api-dc.netlify.app)
+- Solution URL: (https://github.com/sebasdex/countries-api)
+- Live Site URL: (https://countries-api-dc.netlify.app)
 
 ## My process
 
