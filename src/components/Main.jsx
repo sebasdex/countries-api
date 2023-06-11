@@ -35,7 +35,7 @@ function Main() {
                         <div className={`${!theme ? 'bg-white' : 'bg-[hsl(209,23%,22%)] text-white'} w-full mt-5 pb-10 shadow-md rounded-md`} key={index}>
 
                             <img src={item.flags.svg} alt={item.flags.alt} className="object-cover object-center w-full h-60 rounded-t-md" 
-                            onClick={()=> navigate(`/${item.cca2}`)} />
+                            onClick={()=> navigate(`/${item.cca3}`)} />
 
                             <p className="font-bold text-xl px-8 mt-10 mx-2 ">{item.name.common}</p>
                             <div className="px-8 pt-5 text-lg  m-2">

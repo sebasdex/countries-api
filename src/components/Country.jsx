@@ -13,10 +13,10 @@ function Country() {
         if (countries) {
             countryID();
         }
-    }, [countries]);
+    }, [countries, country]);
 
     function countryID() {
-        const filterID = countries.filter(item => item.cca2 === country);
+        const filterID = countries.filter(item => item.cca3 === country);
         setFilterName(filterID);
     }
 
@@ -67,9 +67,9 @@ function Country() {
                                 <p className="font-normal flex items-center gap-5 text-center">
                                     {item.borders && Object.keys(item.borders).length > 0 ? (
                                         item.borders.map((border, index) => (
-                                            <span key={index} className={`${theme ? 'text-white bg-[hsl(209,23%,22%)]' : 'bg-white '} shadow-lg w-40 lg:w-20 p-2 md:ml-5`}>
+                                            <button key={index} className={`${theme ? 'text-white bg-[hsl(209,23%,22%)]' : 'bg-white '} shadow-lg w-40 lg:w-20 p-2 md:ml-5`} onClick={()=> navigate(`/${border}`)}>
                                                 {border}
-                                            </span>
+                                            </button>
                                         ))
                                     ) : (
                                         'No borders found'
